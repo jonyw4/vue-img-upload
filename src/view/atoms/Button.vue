@@ -1,5 +1,11 @@
 <template>
-  <component :is="component" v-on="$listeners" :id="id" :href="href">
+  <component
+    :is="component"
+    v-on="$listeners"
+    :id="id"
+    :href="href"
+    :class="'ui button ' + className"
+  >
     <slot></slot>
   </component>
 </template>
@@ -13,6 +19,7 @@ export default {
       default: "button",
     },
     href: String,
+    className: String,
   },
 };
 </script>
