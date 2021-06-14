@@ -1,17 +1,18 @@
 <template>
-  <button @click="onClick" :id="id">
+  <component :is="component" v-on="$listeners" :id="id" :href="href">
     <slot></slot>
-  </button>
+  </component>
 </template>
 
 <script>
 export default {
   name: "Button",
-  props: ["id"],
-  methods: {
-    onClick(event) {
-      this.$emit("click", event);
+  props: {
+    id: String,
+    component: {
+      default: "button",
     },
+    href: String,
   },
 };
 </script>
