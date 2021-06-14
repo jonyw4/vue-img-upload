@@ -1,18 +1,32 @@
 <template>
-  <header>
-    <Button component="a" @click="$emit('clickLogo', $event)">
+  <header class="ui menu">
+    <Button
+      component="a"
+      @click="$emit('clickLogo', $event)"
+      className="header item"
+    >
       <span>Image Storage</span>
     </Button>
-    <div v-if="isLogged">
-      <Button @click="$emit('clickLogoutBtn', $event)" id="logout"
-        >Logout</Button
-      >
+    <div class="right menu" v-if="isLogged">
+      <Button @click="$emit('clickLogoutBtn', $event)" id="logout">
+        Logout
+      </Button>
     </div>
-    <div v-if="!isLogged">
-      <Button @click="$emit('clickLoginBtn', $event)" id="login">
+    <div class="right menu" v-if="!isLogged">
+      <Button
+        component="a"
+        id="login"
+        className="item"
+        @click="$emit('clickLoginBtn', $event)"
+      >
         Login
       </Button>
-      <Button @click="$emit('clickSignUpBtn', $event)" id="signup">
+      <Button
+        component="a"
+        id="signup"
+        className="item"
+        @click="$emit('clickSignUpBtn', $event)"
+      >
         SignUp
       </Button>
     </div>
