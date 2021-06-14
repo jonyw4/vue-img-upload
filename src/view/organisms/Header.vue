@@ -8,11 +8,31 @@
       <span>Image Storage</span>
     </Button>
     <div class="right menu" v-if="isLogged">
-      <Button @click="$emit('clickLogoutBtn', $event)" id="logout">
+      <Button
+        component="a"
+        id="galleries"
+        className="item"
+        @click="$emit('clickGalleriesBtn', $event)"
+      >
+        Galleries
+      </Button>
+      <Button
+        component="a"
+        id="upload"
+        className="item"
+        @click="$emit('clickUploadBtn', $event)"
+      >
+        Upload
+      </Button>
+      <Button
+        @click="$emit('clickLogoutBtn', $event)"
+        id="logout"
+        className="item"
+      >
         Logout
       </Button>
     </div>
-    <div class="right menu" v-if="!isLogged">
+    <div class="right menu" v-else>
       <Button
         component="a"
         id="login"
