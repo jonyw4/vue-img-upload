@@ -15,18 +15,18 @@ export class OAuthImgurService {
     const queryString = qs.stringify(params);
     return `${IMGUR_API}/oauth2/authorize?${queryString}`;
   }
-  finalizeLoginAuth(url) {
-    const token = this.getTokenFromUrl(url);
-    return this.authRepository.saveToken(token);
+  finalizeLoginAuth(hashQueryString) {
+    const token = this.getTokenFromHashQueryString(hashQueryString);
+    this.authRepository.saveToken(token);
   }
   logout() {
-    return this.authRepository.removeToken();
+    this.authRepository.removeToken();
   }
   isLogged() {
     return this.authRepository.hasToken();
   }
-  getTokenFromUrl(url) {
-    const hash = url.replace("#", "");
+  getTokenFromHashQueryString(hashQueryString) {
+    const hash = hashQueryString.replace("#", "");
     const queryParams = qs.parse(hash);
     return queryParams["access_token"];
   }
