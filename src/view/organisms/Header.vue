@@ -1,29 +1,25 @@
 <template>
   <header class="ui menu">
-    <Button
-      component="a"
-      @click="$emit('clickLogo', $event)"
-      className="header item"
-    >
+    <router-link component="router-link" class="header item" to="/">
       <span>Image Storage</span>
-    </Button>
+    </router-link>
     <div class="right menu" v-if="isLogged">
-      <Button
-        component="a"
-        id="galleries"
-        className="item"
-        @click="$emit('clickGalleriesBtn', $event)"
+      <router-link
+        component="router-link"
+        id="gallery"
+        class="ui button item"
+        to="/gallery"
       >
-        Galleries
-      </Button>
-      <Button
-        component="a"
+        Gallery
+      </router-link>
+      <router-link
+        component="router-link"
         id="upload"
-        className="item"
-        @click="$emit('clickUploadBtn', $event)"
+        class="ui button item"
+        to="/upload"
       >
         Upload
-      </Button>
+      </router-link>
       <Button
         @click="$emit('clickLogoutBtn', $event)"
         id="logout"

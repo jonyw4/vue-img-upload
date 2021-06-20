@@ -10756,6 +10756,11 @@ w3c-xmlserializer@^1.1.2:
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
 
+wait@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/wait/-/wait-0.4.2.tgz#d7d932ea72a57a78b526d168322457d2d7e4ae33"
+  integrity sha512-g4Uu25y9MJ3jtBcrRDDXeI/f7lBNtVmNUM3Xd78S19tm1gZutDkL/f6UEcMi/NqWvKZ74Mhrb+4LwpYbjG6XYA==
+
 walker@^1.0.7, walker@~1.0.5:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/walker/-/walker-1.0.7.tgz#2f7f9b8fd10d677262b18a884e28d19618e028fb"

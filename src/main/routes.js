@@ -1,5 +1,6 @@
 import Home from "../view/templates/Home.vue";
 import AuthHandler from "../view/templates/AuthHandler.vue";
+import PhotoLibrary from "../view/templates/PhotoLibrary.vue";
 
 const routes = [
   {
@@ -12,6 +13,10 @@ const routes = [
     props: () => ({
       urlHash: location.hash,
     }),
+  },
+  {
+    path: "/gallery",
+    component: PhotoLibrary,
   },
 ];
 

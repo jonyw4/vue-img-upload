@@ -1,7 +1,5 @@
 import qs from "qs";
-
-const IMGUR_CLIENT_ID = process.env.VUE_APP_IMGUR_CLIENT_ID;
-const IMGUR_API = "https://api.imgur.com";
+import { IMGUR_API, IMGUR_CLIENT_ID } from "../consts";
 
 export class OAuthImgurService {
   constructor(authRepository) {

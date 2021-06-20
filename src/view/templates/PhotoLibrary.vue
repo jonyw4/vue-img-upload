@@ -35,6 +35,7 @@
 
 <script>
 import BaseLayout from "../organisms/BaseLayout.vue";
+
 export default {
   name: "PhotoLibrary",
   inject: ["photoService"],
@@ -44,10 +45,10 @@ export default {
       loading: false,
       pagination: {
         page: 1,
-        pageSize: 0,
         totalItems: 0,
         totalPages: 0,
       },
+      pageSize: 10,
     };
   },
   mounted() {
@@ -66,7 +67,10 @@ export default {
   methods: {
     async fetchPhotoList(page) {
       this.loading = true;
-      const { pagination, data } = await this.photoService.getList(page);
+      const { pagination, data } = await this.photoService.getList(
+        page,
+        this.pageSize
+      );
       this.pagination = { ...pagination, page };
       this.loading = false;
       return data;
